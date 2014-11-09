@@ -12,40 +12,28 @@
     <!-- TO KEEP OPEN WHEN ON THAT SECTION add class "active" to the a tag of the parent li 
     (the one with the .has-children class on it) <li class="has-children"><a href="#" class="active" ... -->
 
-  <ul class="primary-nav">   
-   <li><a href="index.html">安装业务包</a></li>
-   <!-- add class .active on li item when the page is current -->
-   <li><a href="your-link-here.html"></a></li>
-   <li class="has-children dcjq-parent-li"><a class="dcjq-parent" href="#">Portfolio</a> <!-- add class .has-children on li item if the li has babies -->
-    <ul>
-     <li><a href="your-link-here.html">Portfolio Child Link 1</a></li>
-     <li><a href="your-link-here.html">Portfolio Child Link 2</a></li>
-     <li class="has-children"><a href="#">Portfolio Child w/Child Trigger</a>
-      <ul>
-       <li><a href="your-link-here.html">Portfolio Grand Child Link 1</a></li>
-       <li><a href="your-link-here.html">Portfolio Grand Child Link 2</a></li>
-      </ul>
-     </li>
-     <li><a href="your-link-here.html">Portfolio Child Link 3</a></li>
-     <li><a href="your-link-here.html">Portfolio Child Link 4</a></li>
-    </ul>
-   </li>
-   <li class="has-children"><a href="#">Services</a>
-    <ul>
-     <li><a href="your-link-here.html">Services Child Link 1</a></li>
-     <li><a href="your-link-here.html">Services Child Link 2</a></li>
-     <li class="has-children"><a href="#">Services Child w/Child Trigger</a>
-      <ul>
-       <li><a href="your-link-here.html">Services Grand Child Link 1</a></li>
-       <li><a href="your-link-here.html">Services Grand Child Link 2</a></li>
-      </ul>
-     </li>
-     <li><a href="your-link-here.html">Services Child Link 3</a></li>
-     <li><a href="your-link-here.html">Services Child Link 4</a></li>
-    </ul>
-   </li>
-   <li class="active"><a href="blog.html">联系我们</a></li>
-   <li><a href="your-link-here.html">关于直达通</a></li>
-  </ul>
+<ul class="primary-nav">
+  <% if current_site %>
+    <li class="active"><%= link_to current_site.title, '#' %></li>
+  <% end %>
+
+  <% if current_site %>
+    <% current_site.site_packages.each do |site_package| %>
+     
+      <% if site_package.site_package_flows.any? %>
+        <li class="has-children dcjq-parent-li"><a class="dcjq-parent" href="#"><%= site_package.package.title %></a> <!-- add class .has-children on li item if the li has babies -->
+        <ul>
+        <% site_package.site_package_flows.each do |site_package_flow| %>
+          <li><%= link_to site_package_flow.flow.title, edit_site_package_flow_path(site_package_flow) %></li>
+        <% end %>
+        </ul>
+        </li>
+      <% else %>
+        <li><%= link_to site_package.package.title, '#' %></li>
+      <% end %>
+    <% end %>
+  <% end %>
+ 
+</ul>
  </nav>
 </div>

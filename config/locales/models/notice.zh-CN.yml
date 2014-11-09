@@ -1,0 +1,17 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      notice: 通知
+    attributes:
+      notice:
+        user: 用户
+        level: 级别
+        message: 内容
+        is_read: 是否阅读
+        updated_at: 更新时间
+        created_at: 创建时间
+    errors:
+      notice: 
+  helpers:
+    notice: 

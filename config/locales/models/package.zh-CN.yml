@@ -2,14 +2,15 @@
 zh-CN:
   activerecord:
     models:
-      site: 站点
+      package: 包
     attributes:
-      site:
-        user: 用户编号
+      package:
         title: 标题
+        description: 描述
+        icon: 图标
         updated_at: 更新时间
         created_at: 创建时间
     errors:
-      site: 
+      package: 
   helpers:
-    site: 
+    package: 

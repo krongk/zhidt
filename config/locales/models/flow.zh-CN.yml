@@ -1,0 +1,19 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      flow: 流程表
+    attributes:
+      flow:
+        package: 包
+        title: 标题
+        description: 描述
+        temp_content: 模板内容
+        tutorial: 教程
+        icon: 图标
+        updated_at: 更新时间
+        created_at: 创建时间
+    errors:
+      flow: 
+  helpers:
+    flow: 

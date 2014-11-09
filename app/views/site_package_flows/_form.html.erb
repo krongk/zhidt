@@ -2,13 +2,12 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :site_package %>
-    <%= f.association :flow %>
-    <%= f.input :content %>
-    <%= f.input :status %>
+    <%= f.input :content, input_html: {rows: 22} %>
+    <%= f.input :status, collection:  ApplicationHelper::FLOW_STATUS %>
   </div>
 
+  <br/>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
   </div>
 <% end %>

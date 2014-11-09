@@ -4,7 +4,7 @@ class PackagesController < ApplicationController
   respond_to :html
 
   def index
-    @packages = Package.all
+    @packages = Package.where(["id not in (?)", current_site.site_packages.map(&:package_id)])
     respond_with(@packages)
   end
 

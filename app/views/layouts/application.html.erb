@@ -25,18 +25,18 @@
             :: calling jQuery in the head for ajax work if necessary.
             -->
      <!--[if gt IE 8]><!-->
-        <script src="/js/jquery.min.2.0.3.js"></script>
+        <script src="/js/jquery.min.2.0.3.js" data-turbolinks-track="true"></script>
         <!--<![endif]-->
      <!--[if lt IE 9]>
-        <script src="/js/1.9.1-jquery.min.js"></script>
+        <script src="/js/1.9.1-jquery.min.js" data-turbolinks-track="true"></script>
         <![endif]-->
      
      <!-- WINDOWS 8 Phones BUG FIX -->
-     <script src="/js/windows-fix.js"></script>
+     <script src="/js/windows-fix.js" data-turbolinks-track="true"></script>
 
 
      <!--[if lt IE 9]>
-      <script type="text/javascript" src="/js/selectivizr.js"></script>
+      <script type="text/javascript" src="/js/selectivizr.js" data-turbolinks-track="true"></script>
     <![endif]-->
      
     <!-- ========= GENERATE CODE AND TOUCH ICONS http://iconifier.net/ =========== -->
@@ -72,8 +72,21 @@
     </div>
     <!--/content-col --> 
 
-    <% if @flow %>
+    <% if true  %>
         <%= render 'layouts/footer' %>
     <% end %>
+
+    <!-- _________ FOOTER SCRIPTS ________ --> 
+
+    <script src="/js/bootstrap.min.js"></script> 
+    <script src="/js/jquery.sidewaze_base.js"></script> 
+
+    <!-- Way Better Bootstrap Modals INSTRUCTIONS: https://github.com/jschr/bootstrap-modal/ --> 
+    <!-- DEMO:: http://jschr.github.io/bootstrap-modal/bs3.html --> 
+    <script src="/js/bootstrap-modalmanager.js"></script> 
+    <script src="/js/bootstrap-modal.js"></script> 
+
+    <!-- Responsive Carousel LEARN IT HERE: http://www.owlgraphic.com/owlcarousel/demos/custom.html--> 
+
   </body>
 </html>

@@ -1,7 +1,12 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-  <i class="fa fa-pencil"></i>&nbsp;&nbsp;<%= link_to '修改密码', edit_user_registration_path %>
-  <i class="fa fa-sign-in"></i>&nbsp;&nbsp;<%= link_to '退出', destroy_user_session_path, :method=>'delete' %>
+  <%= link_to sites_path do %>
+    <i class="fa fa-pencil"></i> 切换站点
+  <% end %>
+  &nbsp;|&nbsp;
+  <%= link_to destroy_user_session_path, :method=>'delete' do %>
+    <i class="fa fa-sign-in"></i> 退出
+  <% end %>
 <% else %>
   <i class="fa fa-sign-in"></i>&nbsp;&nbsp;<%= link_to '登录', new_user_session_path %>
   <i class="fa fa-pencil"></i>&nbsp;&nbsp;<%= link_to '注册', new_user_registration_path %>

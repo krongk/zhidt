@@ -18,6 +18,7 @@ class SitePackageFlowsController < ApplicationController
   end
 
   def edit
+    @flow = @site_package_flow.flow
   end
 
   def create

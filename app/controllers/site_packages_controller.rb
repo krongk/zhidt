@@ -14,6 +14,8 @@ class SitePackagesController < ApplicationController
 
   def new
     @site_package = SitePackage.new
+    @site = Site.find_by(id: params[:site_id])
+    @package = Package.find_by(id: params[:package_id])
     respond_with(@site_package)
   end
 
@@ -21,8 +23,14 @@ class SitePackagesController < ApplicationController
   end
 
   def create
-    @site_package = SitePackage.new(site_package_params)
-    @site_package.save
+    @site_package = SitePackage.find_by(site_id: site_package_params[:site_id], package_id: site_package_params[:package_id] )
+    if @site_package.nil?
+      @site_package = SitePackage.create(site_package_params)
+      @site_package.reload
+      Package.find_by(site_package_params[:package_id]).flows.each do |flow|
+        SitePackageFlow.create(site_package_id: @site_package.id, flow_id: flow.id, content: flow.temp_content)
+      end
+    end
     respond_with(@site_package)
   end
 

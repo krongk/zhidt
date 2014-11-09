@@ -1,14 +1,7 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>User:</strong>
-  <%= @site.user %>
-</p>
-
-<p>
-  <strong>Title:</strong>
+  <strong>当前站点:</strong>
   <%= @site.title %>
 </p>
 
-<%= link_to 'Edit', edit_site_path(@site) %> |
-<%= link_to 'Back', sites_path %>
+<%= link_to '修改', edit_site_path(@site), class: 'btn btn-primary btn-lg' %> |
+<%= link_to '安装应用包', packages_path(site_id: @site), class: 'btn btn-primary btn-lg' %>

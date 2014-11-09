@@ -1,0 +1,17 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      site_package_flow: 站点流程
+    attributes:
+      site_package_flow:
+        site_package: 站点包
+        flow: 流程
+        content: 内容
+        status: 状态
+        updated_at: 更新时间
+        created_at: 创建时间
+    errors:
+      site_package_flow: 
+  helpers:
+    site_package_flow: 

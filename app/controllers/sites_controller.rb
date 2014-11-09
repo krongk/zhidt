@@ -4,11 +4,15 @@ class SitesController < ApplicationController
   respond_to :html
 
   def index
-    @sites = Site.all
+    @sites = current_user.sites.page(params[:page])
     respond_with(@sites)
   end
 
   def show
+    user = User.find(current_user.id)
+    user.current_site_id = @site.id
+    user.save!
+    
     respond_with(@site)
   end
 
@@ -22,6 +26,7 @@ class SitesController < ApplicationController
 
   def create
     @site = Site.new(site_params)
+    @site.user_id = current_user.id
     @site.save
     respond_with(@site)
   end

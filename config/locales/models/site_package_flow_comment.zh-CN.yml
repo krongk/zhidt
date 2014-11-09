@@ -1,0 +1,16 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      site_package_flow_comment: 流程评论
+    attributes:
+      site_package_flow_comment:
+        user: 评论者
+        site_package_flow: 流程表
+        content: 评论内容
+        updated_at: 更新时间
+        created_at: 创建时间
+    errors:
+      site_package_flow_comment: 
+  helpers:
+    site_package_flow_comment: 

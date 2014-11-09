@@ -1,6 +1,15 @@
-<h1>Editing site_package_flow</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @site_package_flow %> |
-<%= link_to 'Back', site_package_flows_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= @flow.title %>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <%= render 'form' %>
+      </div>
+      <div class="col-md-6">
+        <%= raw @flow.tutorial %>
+      </div>
+    </div>
+  </div>
+</div>

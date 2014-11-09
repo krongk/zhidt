@@ -2,11 +2,23 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :site %>
-    <%= f.association :package %>
+    <% if @site %>
+      <%= f.input :site_id, as: :hidden, input_html: {value: @site.id } %>
+      <strong>站点：</strong> <%= @site.title %>
+    <% else %>
+      <%= f.association :site, selected: current_site.id %>
+    <% end %>
+  </div>
+  <div class="form-inputs">
+    <% if @package %>
+      <%= f.input :package_id, as: :hidden, input_html: {value: @package.id } %>
+      <strong>业务包：</strong> <%= @package.title %>
+    <% else %>
+      <%= f.association :package %>
+    <% end %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, '确定安装', class: 'btn btn-lg btn-primary' %>
   </div>
 <% end %>
