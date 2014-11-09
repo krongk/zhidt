@@ -1,19 +1,51 @@
-<%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
-    </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-      </ul>
-    </div>
+<div class="nav-col">
+ 
+ <!-- ____________ User Wrapper for login and sign up links _______________  -->
+ 
+ <nav id="nav" class="clearfix" role="navigation">
+ 
+  <div class="user-wrapper">
+   <p><%= render 'layouts/navigation_links' %></p>
   </div>
-</nav>
+  
+ <!-- ____________ Primary Menu _______________  -->
+    <!-- TO KEEP OPEN WHEN ON THAT SECTION add class "active" to the a tag of the parent li 
+    (the one with the .has-children class on it) <li class="has-children"><a href="#" class="active" ... -->
+
+  <ul class="primary-nav">   
+   <li><a href="index.html">安装业务包</a></li>
+   <!-- add class .active on li item when the page is current -->
+   <li><a href="your-link-here.html"></a></li>
+   <li class="has-children dcjq-parent-li"><a class="dcjq-parent" href="#">Portfolio</a> <!-- add class .has-children on li item if the li has babies -->
+    <ul>
+     <li><a href="your-link-here.html">Portfolio Child Link 1</a></li>
+     <li><a href="your-link-here.html">Portfolio Child Link 2</a></li>
+     <li class="has-children"><a href="#">Portfolio Child w/Child Trigger</a>
+      <ul>
+       <li><a href="your-link-here.html">Portfolio Grand Child Link 1</a></li>
+       <li><a href="your-link-here.html">Portfolio Grand Child Link 2</a></li>
+      </ul>
+     </li>
+     <li><a href="your-link-here.html">Portfolio Child Link 3</a></li>
+     <li><a href="your-link-here.html">Portfolio Child Link 4</a></li>
+    </ul>
+   </li>
+   <li class="has-children"><a href="#">Services</a>
+    <ul>
+     <li><a href="your-link-here.html">Services Child Link 1</a></li>
+     <li><a href="your-link-here.html">Services Child Link 2</a></li>
+     <li class="has-children"><a href="#">Services Child w/Child Trigger</a>
+      <ul>
+       <li><a href="your-link-here.html">Services Grand Child Link 1</a></li>
+       <li><a href="your-link-here.html">Services Grand Child Link 2</a></li>
+      </ul>
+     </li>
+     <li><a href="your-link-here.html">Services Child Link 3</a></li>
+     <li><a href="your-link-here.html">Services Child Link 4</a></li>
+    </ul>
+   </li>
+   <li class="active"><a href="blog.html">联系我们</a></li>
+   <li><a href="your-link-here.html">关于直达通</a></li>
+  </ul>
+ </nav>
+</div>

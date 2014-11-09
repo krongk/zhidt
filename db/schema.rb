@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 20141109061435) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "mobile_phone"
     t.integer  "role"
     t.integer  "parent_id"
   end

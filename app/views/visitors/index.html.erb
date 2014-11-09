@@ -1,2 +1,96 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+
+  
+  <h1 class="font-weight-thin no-margin-top">This is the title to a blog post</h1>
+  <hr class="hidden-xs">
+  <p class="meta"> by: Hermione Granger  / date: 24 March 2015  / Category: <a href="#" class="text-underline">Something</a> </p>
+  </p>
+  <hr class="hidden-xs">
+  
+  <!-- this is hidden at small sizes and is found on the top of the content -->
+  <h6 class="visible-xs-inline-block no-margin-top no-margin-bottom uppercase">Share: &nbsp;</h6>
+  <ul class="list-inline visible-xs-inline-block">
+   <li><a href="#" class="fa fa-facebook tooltip-hover" data-placement="top" title="Share on Facebook"></a></li>
+   <li><a href="#" class="fa fa-google-plus tooltip-hover" data-placement="top" title="Share on Google Plus"></a></li>
+   <li><a href="#" class="fa fa-twitter tooltip-hover" data-placement="top" title="Share on Twitter"></a></li>
+   <li><a href="#" class="fa fa-linkedin tooltip-hover" data-placement="top" title="Share on Linkedin"></a></li>
+   <li><a href="#" class="fa fa-instagram tooltip-hover" data-placement="top" title="Share on Instagram"></a></li>
+  </ul>
+  
+  <hr class="visible-xs">
+  
+  <div class="row">
+   <article class="col-sm-9 clearfix">
+    <p class="lead"><strong>Example blog post layout</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget.</p>
+
+    <p> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, <a href="#" class="text-underline">donec non enim</a> tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus </p>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. </p>
+    <h2>Header Level 2</h2>
+    <ol>
+     <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+     <li>Aliquam tincidunt mauris eu risus.</li>
+    </ol>
+    <blockquote>
+     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p>
+    </blockquote>
+    <h3>Header Level 3</h3>
+    <ul>
+     <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+     <li>Aliquam tincidunt mauris eu risus.</li>
+    </ul>
+    <pre><code>
+#header h1 a { 
+  display: block; 
+  width: 300px; 
+  height: 80px; 
+}
+</code></pre>
+   </article>
+   <!--/.col-sm-8 -->
+   
+   <hr class="vertical-spacer visible-xs">
+   <aside class="col-sm-3"> 
+    
+    <!-- this is hidden at small sizes and is found on the top of the content -->
+    <h6 class="hidden-xs">Share</h6>
+    <ul class="list-inline hidden-xs">
+     <li><a href="#" class="fa fa-facebook tooltip-hover" data-placement="top" title="Share on Facebook"></a></li>
+     <li><a href="#" class="fa fa-google-plus tooltip-hover" data-placement="top" title="Share on Google Plus"></a></li>
+     <li><a href="#" class="fa fa-twitter tooltip-hover" data-placement="top" title="Share on Twitter"></a></li>
+     <li><a href="#" class="fa fa-linkedin tooltip-hover" data-placement="top" title="Share on Linkedin"></a></li>
+     <li><a href="#" class="fa fa-instagram tooltip-hover" data-placement="top" title="Share on Instagram"></a></li>
+    </ul>
+
+   <hr class="vertical-spacer visible-xs">
+   
+  <section class="tags">
+      <h6 class="spaced-out-header uppercase display-inline-block">Tags</h6>
+      <a href="#" class="label label-default">Something</a> <a href="#" class="label label-default">Else</a>
+      <a href="#" class="label label-default">Peace</a> <a href="#" class="label label-default">Sublime</a>
+      <a href="#" class="label label-default">Fresh</a> <a href="#" class="label label-default">Default</a>
+      </section>
+      
+   <hr class="vertical-spacer">
+   
+    <div class="well well-sm">
+    <h6>Related</h6>
+    <ul class="list-unstyled">
+     <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</a></li>
+     <li><a href="#">Aliquam tincidunt mauris eu risus.</a></li>
+     <li><a href="#">Vestibulum auctor dapibus neque.</a></li>
+     </div>
+    </ul>
+    <div class="well well-sm">
+    <h6>Popular</h6>
+    <ul class="list-unstyled">
+     <li><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</a></li>
+     <li><a href="#">Aliquam tincidunt mauris eu risus.</a></li>
+     <li><a href="#">Vestibulum auctor dapibus neque.</a></li>
+     </div>
+    </ul>
+   </aside>
+   <!--/.col-sm-4-->
+   
+  </div>
+  <!-- /.row -->
+  
