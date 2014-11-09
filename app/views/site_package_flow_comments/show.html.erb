@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Site package flow:</strong>
+  <%= @site_package_flow_comment.site_package_flow %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @site_package_flow_comment.content %>
+</p>
+
+<%= link_to 'Edit', edit_site_package_flow_comment_path(@site_package_flow_comment) %> |
+<%= link_to 'Back', site_package_flow_comments_path %>

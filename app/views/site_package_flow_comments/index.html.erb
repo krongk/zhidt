@@ -1,0 +1,27 @@
+<h1>Listing site_package_flow_comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Site package flow</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @site_package_flow_comments.each do |site_package_flow_comment| %>
+      <tr>
+        <td><%= site_package_flow_comment.site_package_flow %></td>
+        <td><%= site_package_flow_comment.content %></td>
+        <td><%= link_to 'Show', site_package_flow_comment %></td>
+        <td><%= link_to 'Edit', edit_site_package_flow_comment_path(site_package_flow_comment) %></td>
+        <td><%= link_to 'Destroy', site_package_flow_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site package flow comment', new_site_package_flow_comment_path %>

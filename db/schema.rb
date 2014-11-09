@@ -11,7 +11,77 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109054129) do
+ActiveRecord::Schema.define(version: 20141109061435) do
+
+  create_table "flows", force: true do |t|
+    t.integer  "package_id"
+    t.string   "title"
+    t.string   "description"
+    t.text     "temp_content"
+    t.text     "tutorial"
+    t.string   "icon",         default: "pencil"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "flows", ["package_id"], name: "index_flows_on_package_id", using: :btree
+
+  create_table "notices", force: true do |t|
+    t.integer  "user_id"
+    t.string   "level",      default: "info"
+    t.string   "message"
+    t.boolean  "is_read",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notices", ["user_id"], name: "index_notices_on_user_id", using: :btree
+
+  create_table "packages", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "icon",        default: "tasks"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "site_package_flow_comments", force: true do |t|
+    t.integer  "site_package_flow_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "site_package_flow_comments", ["site_package_flow_id"], name: "index_site_package_flow_comments_on_site_package_flow_id", using: :btree
+
+  create_table "site_package_flows", force: true do |t|
+    t.integer  "site_package_id"
+    t.integer  "flow_id"
+    t.text     "content"
+    t.string   "status",          default: "open"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "site_package_flows", ["flow_id"], name: "index_site_package_flows_on_flow_id", using: :btree
+  add_index "site_package_flows", ["site_package_id"], name: "index_site_package_flows_on_site_package_id", using: :btree
+
+  create_table "site_packages", force: true do |t|
+    t.integer "site_id"
+    t.integer "package_id"
+  end
+
+  add_index "site_packages", ["package_id"], name: "index_site_packages_on_package_id", using: :btree
+  add_index "site_packages", ["site_id"], name: "index_site_packages_on_site_id", using: :btree
+
+  create_table "sites", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sites", ["user_id"], name: "index_sites_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -28,6 +98,7 @@ ActiveRecord::Schema.define(version: 20141109054129) do
     t.datetime "updated_at"
     t.string   "name"
     t.integer  "role"
+    t.integer  "parent_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

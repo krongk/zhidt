@@ -1,0 +1,14 @@
+<%= simple_form_for(@site_package_flow) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :site_package %>
+    <%= f.association :flow %>
+    <%= f.input :content %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

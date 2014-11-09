@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @site_package.site %>
+</p>
+
+<p>
+  <strong>Package:</strong>
+  <%= @site_package.package %>
+</p>
+
+<%= link_to 'Edit', edit_site_package_path(@site_package) %> |
+<%= link_to 'Back', site_packages_path %>

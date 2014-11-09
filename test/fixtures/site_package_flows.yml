@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  site_package_id: 
+  flow_id: 
+  content: MyText
+  status: MyString
+
+two:
+  site_package_id: 
+  flow_id: 
+  content: MyText
+  status: MyString

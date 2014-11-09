@@ -1,0 +1,27 @@
+<h1>Listing site_packages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Site</th>
+      <th>Package</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @site_packages.each do |site_package| %>
+      <tr>
+        <td><%= site_package.site %></td>
+        <td><%= site_package.package %></td>
+        <td><%= link_to 'Show', site_package %></td>
+        <td><%= link_to 'Edit', edit_site_package_path(site_package) %></td>
+        <td><%= link_to 'Destroy', site_package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Site package', new_site_package_path %>
