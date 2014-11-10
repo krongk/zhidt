@@ -17,6 +17,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-oauth2'
 gem 'mysql2', '0.3.13'
+gem 'high_voltage'
 gem 'pundit'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby

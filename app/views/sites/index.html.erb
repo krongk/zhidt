@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-4">
     <div class="list-group">
-      <%= link_to '切换站点', '#', class: 'list-group-item active' %>
+      <%= link_to '切换项目', '#', class: 'list-group-item active' %>
       <% @sites.each do |site| %>
         <%= link_to site.title, site_path(site), class: "list-group-item" %>
       <% end %>

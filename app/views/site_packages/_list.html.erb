@@ -1,0 +1,6 @@
+<div class="row m-top-md">
+<% site_packages.each do |site_package| %>
+  <% package = site_package.package %>
+  <%= render partial: 'packages/package', locals: {package: package, install: false} %>
+<% end %>
+</div>

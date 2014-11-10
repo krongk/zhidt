@@ -2,11 +2,11 @@
 zh-CN:
   activerecord:
     models:
-      site: 站点
+      site: 项目
     attributes:
       site:
-        user: 用户编号
-        title: 标题
+        user: 用户
+        title: 名称
         updated_at: 更新时间
         created_at: 创建时间
     errors:

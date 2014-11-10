@@ -9,6 +9,7 @@ class SitePackagesController < ApplicationController
   end
 
   def show
+    @package = @site_package.package
     respond_with(@site_package)
   end
 

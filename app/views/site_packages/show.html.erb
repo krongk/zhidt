@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @site_package.site %>
-</p>
-
-<p>
-  <strong>Package:</strong>
-  <%= @site_package.package %>
-</p>
-
-<%= link_to 'Edit', edit_site_package_path(@site_package) %> |
-<%= link_to 'Back', site_packages_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    项目业务包---<%= @package.title %>
+  </div>
+  <div class="panel-body">
+    <ol class="list-style">
+      <% @site_package.site_package_flows.each do |site_package_flow| %>
+        <li>
+          <%= link_to site_package_flow.flow.title, edit_site_package_flow_path(site_package_flow) %>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width: 35%">
+              <span class="sr-only">35% Complete (success)</span>
+            </div>
+            <div class="progress-bar progress-bar-warning" style="width: 20%">
+              <span class="sr-only">20% Complete (warning)</span>
+            </div>
+            <div class="progress-bar progress-bar-danger" style="width: 10%">
+              <span class="sr-only">10% Complete (danger)</span>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+  <div class="panel-footer">
+    生成报表
+  </div>
+</div>

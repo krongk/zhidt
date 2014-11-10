@@ -1,0 +1,27 @@
+<div class="col-lg-4 col-sm-6">
+  <div class="statistic-box bg-<%= rand_color %> m-bottom-md">
+    <div class="statistic-title">
+      <i class="fa fa-<%= package.icon %>"></i>
+    </div>
+
+    <div class="statistic-value">
+      <% if install %>
+        <%= link_to package.title, new_site_package_path(site_id: current_site.id, package_id: package.id) %>
+      <% else %>
+        <%= link_to package.title, site_package_path(current_site.site_packages.find{|sp| sp.package.id == package.id}) %>
+      <% end %>
+    </div>
+
+    <div class="m-top-md">
+      <% if install %>
+        <%= link_to package.description, new_site_package_path(site_id: current_site.id, package_id: package.id) %>
+      <% else %>
+        <%= link_to package.description, site_package_path(current_site.site_packages.find{|sp| sp.package.id == package.id}) %>
+      <% end %>
+    </div>
+
+    <div class="statistic-icon-background">
+      <i class="fa fa-<%= package.icon %>"></i>
+    </div>
+  </div>
+</div>

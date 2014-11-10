@@ -2,19 +2,6 @@
 
 <div class="row">
   <% @packages.each do |package| %>
-    <div class="col-md-3">
-      <div class="panel panel-success">
-       <div class="panel-heading">
-         <%= package.title %>
-       </div>
-       <div class="panel-body">
-         <i class="fa fa-x5 fa-<%= package.icon %>"></i>
-         <%= package.description %>
-       </div>
-       <div class="panel-footer">
-        <%= link_to '安装', new_site_package_path(site_id: current_site.id, package_id: package.id) %>
-       </div>
-      </div>
-     </div>
+    <%= render partial: 'package', locals: {package: package, install: true} %>   
   <% end %>
 </div>

@@ -1,7 +1,23 @@
-<p>
-  <strong>当前站点:</strong>
-  <%= @site.title %>
-</p>
-
-<%= link_to '修改', edit_site_path(@site), class: 'btn btn-primary btn-lg' %> |
-<%= link_to '安装应用包', packages_path(site_id: @site), class: 'btn btn-primary btn-lg' %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong>当前项目:</strong>&nbsp;&nbsp;<%= @site.title %> <small>(<%= link_to '修改', edit_site_path(@site) %>)</small>
+      </div>
+      <div class="panel-body">
+        <% if @site.site_packages.any? %>
+          已经安装的业务包： 
+          <%= render partial: 'site_packages/list', locals: {site_packages: @site.site_packages} %>
+        <% else %>
+          <p>你还没有给此项目添加任何业务哟， 项目的所有流程都可以在各种业务包中获得</p>
+        <% end %>
+        <ul class="list-style">
+          <li><%= link_to '什么是业务包？', page_path('package/what') %></li>
+          <li><%= link_to '如何安装和使用业务包？', page_path('package/how') %></li>
+        </ul>
+        <%= link_to '点击这里安装业务包', packages_path, class: 'btn btn-info' %>
+      
+      </div>
+    </div>
+  </div>
+</div>

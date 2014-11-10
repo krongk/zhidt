@@ -4,7 +4,7 @@
   <div class="form-inputs">
     <% if @site %>
       <%= f.input :site_id, as: :hidden, input_html: {value: @site.id } %>
-      <strong>站点：</strong> <%= @site.title %>
+      <strong>项目：</strong> <%= @site.title %>
     <% else %>
       <%= f.association :site, selected: current_site.id %>
     <% end %>

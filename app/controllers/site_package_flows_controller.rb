@@ -29,7 +29,7 @@ class SitePackageFlowsController < ApplicationController
 
   def update
     @site_package_flow.update(site_package_flow_params)
-    respond_with(@site_package_flow)
+    respond_with(@site_package_flow.site_package)
   end
 
   def destroy

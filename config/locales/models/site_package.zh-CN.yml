@@ -2,10 +2,10 @@
 zh-CN:
   activerecord:
     models:
-      site_package: 站点包
+      site_package: 项目包
     attributes:
       site_package:
-        site: 站点
+        site: 项目
         package: 包
         updated_at: 更新时间
         created_at: 创建时间
