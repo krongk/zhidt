@@ -12,11 +12,10 @@
           <p>你还没有给此项目添加任何业务哟， 项目的所有流程都可以在各种业务包中获得</p>
         <% end %>
         <ul class="list-style">
-          <li><%= link_to '什么是业务包？', page_path('package/what') %></li>
-          <li><%= link_to '如何安装和使用业务包？', page_path('package/how') %></li>
+          <li><%= link_to '什么是业务包？', page_path('package/what'), target: '_blank' %></li>
+          <li><%= link_to '如何安装和使用业务包？', page_path('package/how'), target: '_blank' %></li>
         </ul>
         <%= link_to '点击这里安装业务包', packages_path, class: 'btn btn-info' %>
-      
       </div>
     </div>
   </div>

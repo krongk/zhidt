@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Site package:</strong>
-  <%= @site_package_flow.site_package %>
-</p>
-
-<p>
-  <strong>Flow:</strong>
-  <%= @site_package_flow.flow %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @site_package_flow.content %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @site_package_flow.status %>
-</p>
-
-<%= link_to 'Edit', edit_site_package_flow_path(@site_package_flow) %> |
-<%= link_to 'Back', site_package_flows_path %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= @site_package_flow.site_package.package.title %>
+    <small><%= link_to '修改', edit_site_package_flow_path(@site_package_flow), class: 'btn btn-sm' %></small>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <%= simple_format @site_package_flow.content %>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <%= render partial: 'site_package_flow_comments/list', locals: {site_package_flow_comments: @site_package_flow.site_package_flow_comments} %>
+          </li>
+          <li class="list-group-item">
+            <%= render 'site_package_flow_comments/form' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

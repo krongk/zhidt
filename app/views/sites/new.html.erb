@@ -3,6 +3,20 @@
     添加项目
   </div>
   <div class="panel-body">
-    <%= render 'form' %>
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <%= render 'form' %>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <ul class="list-style">
+          <% if current_user.sites.empty? %>
+            <li>请添加一个【项目】，开启你的业务管理！</li>
+          <% end %>
+          <li>【项目】可以是一个网站、一个软件、一个产品、一个活动.</li>
+          <li>【项目】添加后，可以为该项目安装各种【业务包】.</li>
+          <li>每个【业务包】包含一些列业务【流程】.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

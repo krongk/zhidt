@@ -3,16 +3,15 @@
   <%= link_to sites_path do %>
     <i class="fa fa-pencil"></i> 切换项目
   <% end %>
-  &nbsp;|&nbsp;
+  &nbsp;&nbsp;
   <%= link_to destroy_user_session_path, :method=>'delete' do %>
     <i class="fa fa-sign-in"></i> 退出
   <% end %>
 <% else %>
-  <i class="fa fa-sign-in"></i>&nbsp;&nbsp;<%= link_to '登录', new_user_session_path %>
-  <i class="fa fa-pencil"></i>&nbsp;&nbsp;<%= link_to '注册', new_user_registration_path %>
-<% end %>
-<% if user_signed_in? %>
-  <% if current_user.admin? %>
-    <i class="fa fa-user"></i>&nbsp;&nbsp;<%= link_to '会员', users_path %>
+  <%= link_to new_user_session_path do %>
+    <i class="fa fa-sign-in"></i> 登录
+  <% end %>&nbsp;&nbsp;
+  <%= link_to new_user_registration_path do %>
+    <i class="fa fa-plus"></i> 注册
   <% end %>
 <% end %>

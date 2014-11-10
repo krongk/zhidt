@@ -8,6 +8,9 @@
 
   <br/>
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
+    <%= f.button :submit, '更 新', class: 'btn btn-lg btn-primary' %> &nbsp;&nbsp;
+    <div class="pull-right">
+      <%= link_to '查 看 ', site_package_flow_path(@site_package_flow), class: 'btn btn-lg btn-info' %>
+    </div>
   </div>
 <% end %>

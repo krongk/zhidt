@@ -1,10 +1,23 @@
 <div class="row">
   <div class="col-md-4">
-    <div class="list-group">
-      <%= link_to '切换项目', '#', class: 'list-group-item active' %>
-      <% @sites.each do |site| %>
-        <%= link_to site.title, site_path(site), class: "list-group-item" %>
-      <% end %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        切换项目
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <% @sites.each do |site| %>
+            <li class="list-group-item"><%= link_to site.title, site_path(site) %> <i class="fa fa-send"></i>  </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="panel-footer">
+        <%= link_to new_site_path do %>
+          <i class="fa fa-plus"></i> 添加项目
+        <% end %>
+      </div>
     </div>
+
   </div>
 </div>

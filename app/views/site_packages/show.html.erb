@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    项目业务包---<%= @package.title %>
+    <%= @package.title %>---流程表
   </div>
   <div class="panel-body">
     <ol class="list-style">
@@ -8,7 +8,7 @@
         <li>
           <%= link_to site_package_flow.flow.title, edit_site_package_flow_path(site_package_flow) %>
           <div class="progress">
-            <div class="progress-bar progress-bar-success" style="width: 35%">
+            <div class="progress-bar progress-bar-success" style="width: 70%">
               <span class="sr-only">35% Complete (success)</span>
             </div>
             <div class="progress-bar progress-bar-warning" style="width: 20%">
@@ -23,6 +23,6 @@
     </ol>
   </div>
   <div class="panel-footer">
-    生成报表
+    点击每个流程表，完成业务信息填写，以及状态更新！
   </div>
 </div>

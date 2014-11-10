@@ -14,23 +14,35 @@
 
 <ul class="primary-nav">
   <% if current_site %>
-    <li class="active"><%= link_to current_site.title, site_path(current_site) %></li>
+    <li class="active">
+      <%= link_to site_path(current_site) do %>
+        <%= current_site.title %> <i class="fa fa-send"></i>
+      <% end %>
+    </li>
   <% end %>
 
   <% if current_site %>
-    <% current_site.site_packages.each do |site_package| %>
-     
-      <% if site_package.site_package_flows.any? %>
-        <li class="has-children dcjq-parent-li"><a class="dcjq-parent" href="#"><%= site_package.package.title %></a> <!-- add class .has-children on li item if the li has babies -->
-        <ul>
-        <% site_package.site_package_flows.each do |site_package_flow| %>
-          <li><%= link_to site_package_flow.flow.title, edit_site_package_flow_path(site_package_flow) %></li>
+    <% if current_site.site_packages.any? %>
+      <% current_site.site_packages.each do |site_package| %>
+       
+        <% if site_package.site_package_flows.any? %>
+          <li class="has-children dcjq-parent-li"><a class="dcjq-parent" href="#"><%= site_package.package.title %></a> <!-- add class .has-children on li item if the li has babies -->
+          <ul>
+          <% site_package.site_package_flows.each do |site_package_flow| %>
+            <li><%= link_to site_package_flow.flow.title, edit_site_package_flow_path(site_package_flow) %></li>
+          <% end %>
+          </ul>
+          </li>
+        <% else %>
+          <li><%= link_to site_package.package.title, '#' %></li>
         <% end %>
-        </ul>
-        </li>
-      <% else %>
-        <li><%= link_to site_package.package.title, '#' %></li>
       <% end %>
+    <% else %>
+      <li>
+        <%= link_to packages_path do %>
+          安装业务包 <i class="fa fa-plus"></i>
+        <% end %>
+      </li>
     <% end %>
   <% end %>
  

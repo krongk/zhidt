@@ -9,6 +9,7 @@ class SitePackageFlowsController < ApplicationController
   end
 
   def show
+    @site_package_flow_comment = SitePackageFlowComment.new(site_package_flow_id: @site_package_flow.id)
     respond_with(@site_package_flow)
   end
 

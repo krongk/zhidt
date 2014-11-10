@@ -23,7 +23,7 @@ class SitePackageFlowCommentsController < ApplicationController
   def create
     @site_package_flow_comment = SitePackageFlowComment.new(site_package_flow_comment_params)
     @site_package_flow_comment.save
-    respond_with(@site_package_flow_comment)
+    respond_with(@site_package_flow_comment.site_package_flow)
   end
 
   def update

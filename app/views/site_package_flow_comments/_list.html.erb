@@ -1,0 +1,12 @@
+<% site_package_flow_comments.each do |site_package_flow_comment| %>
+  <% rc = rand_color %>
+  <div class="row " style='margin-bottom: 5px;'>
+    <div class="col-md-3 bg-<%= rc %>">
+      <strong><%= current_user.name %></strong><br/>
+      <small><%= distance_of_time_in_words_to_now(site_package_flow_comment.created_at) %>前</small>
+    </div>
+    <div class="col-md-9 text-<%= rc %>">
+      <%= site_package_flow_comment.content %>
+    </div>
+  </div>
+<% end %>
