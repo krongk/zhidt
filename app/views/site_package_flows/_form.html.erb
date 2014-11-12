@@ -6,6 +6,19 @@
     <%= f.input :status, collection:  ApplicationHelper::FLOW_STATUS %>
   </div>
 
+  <% unless @site_package_flow.new_record? %>
+    <%= link_to "添加附件", new_resource_path(source_class: 'SitePackageFlow', source_id: @site_package_flow.id ), target: '_blank', class: 'btn btn-success' %>
+    <div class="row">
+      <% Resource.assets('SitePackageFlow', @site_package_flow.id).each do |resource| %>
+        <div class="col-xs-6 col-md-3">
+          <a href="#" class="thumbnail">
+            <%= qiniu_image_tag resource.asset.url, :thumbnail => '200x200>', :quality => 80 %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
   <br/>
   <div class="form-actions">
     <%= f.button :submit, '更 新', class: 'btn btn-lg btn-primary' %> &nbsp;&nbsp;

@@ -7,6 +7,13 @@
     <div class="row">
       <div class="col-md-6">
         <%= simple_format @site_package_flow.content %>
+        <% Resource.assets('SitePackageFlow', @site_package_flow.id).each do |resource| %>
+          <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+              <%= qiniu_image_tag resource.asset.url, :thumbnail => '200x200>', :quality => 80 %>
+            </a>
+          </div>
+        <% end %>
       </div>
       <div class="col-md-6">
         <ul class="list-group">

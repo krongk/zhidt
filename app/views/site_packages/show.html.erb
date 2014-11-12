@@ -1,21 +1,29 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <%= @package.title %>---流程表
+    <div class="pull-right">
+      <%= link_to '修改', edit_site_package_path(@site_package) %> |　
+      <%= link_to '删除', @site_package, method: :delete, data: { confirm: '删除业务包将删除里面的所有数据，确定要删除吗?' } %>
+    </div>
   </div>
   <div class="panel-body">
     <ol class="list-style">
       <% @site_package.site_package_flows.each do |site_package_flow| %>
         <li>
-          <%= link_to site_package_flow.flow.title, edit_site_package_flow_path(site_package_flow) %>
+          <% if site_package_flow.status == 'close' %>
+            <%= link_to site_package_flow.flow.title, site_package_flow_path(site_package_flow), class: 'link-complete' %>
+          <% else %>
+            <%= link_to site_package_flow.flow.title, edit_site_package_flow_path(site_package_flow) %>
+          <% end %>
           <div class="progress">
-            <div class="progress-bar progress-bar-success" style="width: 70%">
-              <span class="sr-only">35% Complete (success)</span>
+            <div class="progress-bar progress-bar-success" style="width: <%= site_package_flow.complete_rate * 14 %>%">
+              <span class="sr-only">完成率<%= site_package_flow.complete_rate * 20 %>%</span>
             </div>
-            <div class="progress-bar progress-bar-warning" style="width: 20%">
-              <span class="sr-only">20% Complete (warning)</span>
+            <div class="progress-bar progress-bar-warning" style="width: <%= site_package_flow.complete_rate * 4 %>%">
+              <span class="sr-only">更新次数<%= site_package_flow.edit_count %></span>
             </div>
-            <div class="progress-bar progress-bar-danger" style="width: 10%">
-              <span class="sr-only">10% Complete (danger)</span>
+            <div class="progress-bar progress-bar-danger" style="width: <%= site_package_flow.complete_rate * 2 %>%">
+              <span class="sr-only">&nbsp;</span>
             </div>
           </div>
         </li>

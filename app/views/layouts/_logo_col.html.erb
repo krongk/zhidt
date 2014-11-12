@@ -24,15 +24,18 @@
   <!-- ____________ SOCIAL WRAPPER _______________  -->
  <div class="social-wrapper">
   <ul>
-   <li>
-     <%= link_to '', packages_path,  class: 'fa fa-fighter-jet tooltip-hover', 'data-placement' => 'left', title: '安装业务包' %>
-   </li>
-   <li>
-     <%= link_to '', notices_path,  class: 'fa fa-bell tooltip-hover', 'data-placement' => 'left', title: '操作日志' %>
-   </li>
-   <li>
-     <%= link_to '', edit_user_registration_path,  class: 'fa fa-edit tooltip-hover', 'data-placement' => 'left', title: '修改密码' %>
-   </li>
+   <% if user_signed_in? %>
+     <li>
+       <%= link_to '', packages_path,  class: 'fa fa-fighter-jet tooltip-hover', 'data-placement' => 'left', title: '安装业务包' %>
+     </li>
+     <li>
+       <%= link_to '', notices_path,  class: 'fa fa-bell tooltip-hover', 'data-placement' => 'left', title: '操作日志' %>
+     </li>
+     <li>
+       <%= link_to '', edit_user_registration_path,  class: 'fa fa-edit tooltip-hover', 'data-placement' => 'left', title: '修改密码' %>
+     </li>
+   <% end %>
+   
    <li>
      <%= link_to '', '#',  class: 'fa fa-comment tooltip-hover', 'data-placement' => 'left', title: '联系我们' %>
    </li>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :resources
+
   resources :site_package_flow_comments
 
   resources :site_package_flows

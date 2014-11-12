@@ -25,11 +25,14 @@ class SitePackageFlowsController < ApplicationController
   def create
     @site_package_flow = SitePackageFlow.new(site_package_flow_params)
     @site_package_flow.save
+
     respond_with(@site_package_flow)
   end
 
   def update
     @site_package_flow.update(site_package_flow_params)
+    @site_package_flow.increase_edit_count
+    
     respond_with(@site_package_flow.site_package)
   end
 

@@ -1,0 +1,16 @@
+<%= simple_form_for(@resource, html: { :multipart => true }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%#= f.input :resource_type, as: :hidden, input_html: { value: 'image'} %>
+    <%= f.input :source_class, as: :hidden, input_html: { value: params[:source_class]} %>
+    <%= f.input :source_id, as: :hidden, input_html: { value: params[:source_id]} %>
+    <%= f.input :asset, as: :file, label: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= button_tag(type: 'submit', data: { disable_with: "正在上传,请耐心等待..." }, class: "btn btn-primary icon-left") do %>
+      <i class="fa fa-location-arrow"></i> 上 传
+    <% end %>   
+  </div>
+<% end %>

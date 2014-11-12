@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+.link-complete{
+  color: #5cb85c;
+  font-weight: 500;
+}
+
+.btn-primary, .submit, .authform .button, .button-xs {
+  color: white;
+  background-color: #A4C700;
+  border-color: #A4C700;
+}

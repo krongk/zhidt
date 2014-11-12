@@ -21,6 +21,8 @@ class SitePackagesController < ApplicationController
   end
 
   def edit
+    @site = @site_package.site
+    @package = @site_package.package
   end
 
   def create

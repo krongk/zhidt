@@ -1,6 +1,13 @@
-<h1>Editing site_package</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    修改业务包 
+  </div>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+  <div class="panel-footer">
+    <%= link_to '查看', @site_package %> |
+    <%= link_to '返回', @site %>
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @site_package %> |
-<%= link_to 'Back', site_packages_path %>
